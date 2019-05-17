@@ -12,7 +12,8 @@ Express endpoint running on docker
 
 Docker must be installed. To check this type `docker --version` in the console.
 
-Create normal express app and pick a server
+Create normal express app and pick a port # - here I picked 5000.
+
 
 ```javascript
 import express from 'express';
@@ -35,6 +36,8 @@ app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`)
 });
 ```
+
+The code above is just to get a server running and returns a valuable message to the client!
 
 ### Setup docker
 
@@ -78,7 +81,7 @@ Now need to build this image:
 docker build -t node-docker .
 ```
 
-The build process will begin and output progress to console and assuming all went well will end with a `Successfully built <hash id>` nessage
+The build process will begin and output progress to console and assuming all went well will end with a `Successfully built <hash id>` message
 
 To now run our image we need to run the following:
 
@@ -95,4 +98,4 @@ docker run -d -p 9000:5000 node-docker
 
 The output from console should show a hash id.
 
-To see the image is up and running 
+To see the image is up and running type in `docker ps` in the console. This will print a list of running images in the console.
